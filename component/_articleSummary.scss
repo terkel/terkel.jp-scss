@@ -11,13 +11,10 @@
     }
 
     h3 {
+        font-family: $font-family-mincho;
         font-weight: normal;
         opacity: 1;
         margin: 0;
-
-        .mincho & {
-            font-family: $font-family-serif, $font-family-mincho, serif;
-        }
 
         a {
             border: 0;
@@ -32,7 +29,7 @@
         @include vertical-rhythm(line-height, 5/6);
         display: block;
         color: $color-text-secondary;
-        font-family: $font-family-sans, $font-family-gothic, sans-serif;
+        font-family: $font-family-system;
         font-size: $font-size-xsmall;
         margin: 0;
     }

@@ -1,5 +1,5 @@
 html {
-    font-family: $font-family-sans, $font-family-gothic, sans-serif;
+    font-family: $font-family-system;
     font-size: percentage($ratio-minor-7th * 0.5);
 
     @media #{ $media-medium } {
@@ -22,16 +22,13 @@ body {
 
 h1 {
     @include vertical-rhythm(line-height, 9/6);
+    font-family: $font-family-mincho;
     font-size: $font-size-xxlarge;
     font-weight: normal;
     margin: 0;
 
     @media #{ $media-xsmall } {
         font-size: $font-size-xxxlarge;
-    }
-
-    .mincho & {
-        font-family: $font-family-serif, $font-family-mincho, serif;
     }
 }
 
@@ -168,7 +165,7 @@ pre,
 code,
 samp,
 kbd {
-    font-family: $font-family-mono, monospace;
+    font-family: $font-family-mono;
 }
 
 pre {
@@ -274,7 +271,7 @@ a {
     color: $color-accent;
 
     &[href^="#fn-"] {
-        font-family: $font-family-mono, monospace;
+        font-family: $font-family-mono;
         font-weight: bold;
         padding-left: 0.25em;
         padding-right: 0.25em;

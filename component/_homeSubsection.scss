@@ -9,7 +9,7 @@
     h2 {
         @include vertical-rhythm(line-height, 5/6);
         @include vertical-rhythm(margin-bottom, 9/6);
-        font-family: $font-family-sans, $font-family-gothic, sans-serif;
+        font-family: $font-family-system;
         font-weight: bold;
         font-size: $font-size-xsmall;
         letter-spacing: $letter-spacing-small;
@@ -20,7 +20,7 @@
 
     .more {
         @include vertical-rhythm(line-height, 5/6);
-        font-family: $font-family-sans, $font-family-gothic, sans-serif;
+        font-family: $font-family-system;
         font-size: $font-size-xsmall;
         letter-spacing: $letter-spacing-small;
         text-transform: uppercase;

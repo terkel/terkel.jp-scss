@@ -1,9 +1,8 @@
 // Font family
-$font-family-serif:  "Merriweather";
-$font-family-sans:   "Merriweather Sans";
-$font-family-mincho: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN";
-$font-family-gothic: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo";
-$font-family-mono:   "Menlo", "Consolas";
+$font-family-system: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", "Helvetica Neue", "sans-serif", sans-serif, "Segoe UI Emoji";
+$font-family-mincho: "source-han-serif-japanese-1", "source-han-serif-japanese-2", serif;
+$font-family-gothic: "source-han-sans-japanese-1", "source-han-sans-japanese-2", sans-serif;
+$font-family-mono:   "Menlo", "Consolas", monospace;
 
 // Font size
 $font-size-xxxlarge: $ratio-octave          + rem;
