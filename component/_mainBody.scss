@@ -2,6 +2,7 @@
     @include vertical-rhythm(margin-bottom, 3);
     @include vertical-rhythm(margin-top, 3);
     font-family: $font-family-mincho;
+    font-kerning: none;
 
     h2,
     blockquote,
