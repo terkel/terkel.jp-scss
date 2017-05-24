@@ -177,12 +177,14 @@ pre {
 code,
 samp,
 kbd {
+    font-size: 87.5%;
     opacity: $ratio-minor-7th * 0.5;
 
     pre &,
     code &,
     samp &,
     kbd & {
+        font-size: 100%;
         opacity: 1;
     }
 }
