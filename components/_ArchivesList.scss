@@ -1,0 +1,14 @@
+.ArchivesList {
+    li {
+        @include list-item-dash();
+    }
+
+    time {
+        font-kerning: auto;
+        white-space: nowrap;
+        color: $color-text-secondary;
+        font-family: $font-family-system;
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+    }
+}

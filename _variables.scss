@@ -1,0 +1,23 @@
+// Base colors
+$color-black: black;
+$color-white: white;
+$color-yellow: hsl(60, 100%, 50%);
+$color-blue: hsl(210, 100%, 50%);
+
+// Theme colors
+$color-dark: $color-black;
+$color-light: change-color($color-yellow, $saturation: percentage(1/4), $lightness: percentage(31/32));
+$color-accent: change-color($color-blue, $lightness: 50% - percentage(1/16));
+
+// Site-wide colors
+$color-background: $color-light;
+$color-text: $color-dark;
+$color-text-secondary: rgba($color-black, 0.54);
+$color-link: $color-accent;
+$color-border: rgba($color-black, 0.42);
+
+// Font families
+$font-family-system: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", "Helvetica Neue", "sans-serif", sans-serif, "Segoe UI Emoji";
+$font-family-mincho: "source-han-serif-japanese", serif;
+$font-family-gothic: "source-han-sans-japanese", sans-serif;
+$font-family-mono:   "mplus-1m", "ubuntu-mono", monospace;

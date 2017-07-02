@@ -1,0 +1,94 @@
+@media print {
+    body {
+        background-color: transparent;
+        margin-right: 14rem;
+        width: 40rem;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    .SiteHeader {
+        display: none;
+    }
+
+    .MainHeader {
+        border-bottom: 1px solid $color-border;
+        border-top: 1px solid $color-border;
+        box-shadow: none;
+    }
+
+    .MainBody {
+        counter-reset: sidenote;
+
+        a[href],
+        abbr[title],
+        dfn[title] {
+            counter-increment: sidenote;
+        }
+
+        a[href]::after,
+        abbr[title]::after,
+        dfn[title]::after {
+            bottom: -0.25em;
+            color: rgba(black, 0.87);
+            content: counter(sidenote);
+            font-family: $font-family-system;
+            font-size: 0.625rem;
+            font-weight: normal;
+            line-height: 0;
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mjk-western:not(.mjk-western-atParagraphEnd):not(.mjk-western-noSpaceAfter) + a[href]::after,
+        .mjk-western:not(.mjk-western-atParagraphEnd):not(.mjk-western-noSpaceAfter) + abbr[title]::after,
+        .mjk-western:not(.mjk-western-atParagraphEnd):not(.mjk-western-noSpaceAfter) + dfn[title]::after {
+            margin-left: 0;
+        }
+
+        a[href]::before,
+        abbr[title]::before,
+        dfn[title]::before {
+            clear: right;
+            color: rgba(black, 0.87);
+            font-family: $font-family-system;
+            font-size: 0.625rem;
+            font-weight: normal;
+            float: right;
+            line-height: 1.6;
+            margin-right: -14rem;
+            margin-bottom: -0.375rem;
+            margin-top: 0.375rem;
+            overflow-wrap: break-word;
+            width: 12rem;
+        }
+
+        abbr[title]::before,
+        dfn[title]::before {
+            content: counter(sidenote) ".\A0" attr(title);
+        }
+
+        a[href]::before {
+            content: counter(sidenote) ".\A0" attr(href);
+        }
+    }
+
+    .SiteFooter {
+        border-top: 1px solid $color-border;
+        box-shadow: none;
+    }
+}
