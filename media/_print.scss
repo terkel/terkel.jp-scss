@@ -18,6 +18,10 @@
         page-break-after: avoid;
     }
 
+    pre {
+        white-space: pre-wrap;
+    }
+
     thead {
         display: table-header-group;
     }
