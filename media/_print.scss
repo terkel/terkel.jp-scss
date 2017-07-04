@@ -1,7 +1,15 @@
 @media print {
+    *,
+    *::before,
+    *::after {
+        background-color: transparent !important;
+        color: black !important;
+    }
+
     body {
-        background-color: transparent;
+        margin-left: 0;
         margin-right: 14rem;
+        max-width: none;
         width: 40rem;
     }
 
@@ -19,30 +27,29 @@
         page-break-inside: avoid;
     }
 
-    .SiteHeader {
-        display: none;
-    }
-
+    .SiteHeader,
     .MainHeader {
         border-bottom: 1px solid $color-border;
-        border-top: 1px solid $color-border;
         box-shadow: none;
+    }
+
+    .SiteHeader nav {
+        display: none;
     }
 
     .MainBody {
         counter-reset: sidenote;
 
-        a[href],
+        a[href]:not([href^="#"]),
         abbr[title],
         dfn[title] {
             counter-increment: sidenote;
         }
 
-        a[href]::after,
+        a[href]:not([href^="#"])::after,
         abbr[title]::after,
         dfn[title]::after {
             bottom: -0.25em;
-            color: rgba(black, 0.87);
             content: counter(sidenote);
             font-family: $font-family-system;
             font-size: 0.625rem;
@@ -60,35 +67,43 @@
             margin-left: 0;
         }
 
-        a[href]::before,
+        a[href]:not([href^="#"])::before,
         abbr[title]::before,
         dfn[title]::before {
             clear: right;
-            color: rgba(black, 0.87);
             font-family: $font-family-system;
             font-size: 0.625rem;
             font-weight: normal;
             float: right;
             line-height: 1.6;
             margin-right: -14rem;
-            margin-bottom: -0.375rem;
-            margin-top: 0.375rem;
+            margin-bottom: -0.5rem;
+            margin-top: 0.5rem;
             overflow-wrap: break-word;
             width: 12rem;
+        }
+
+        a[href]:not([href^="#"])::before {
+            content: counter(sidenote) ".\A0" attr(href);
         }
 
         abbr[title]::before,
         dfn[title]::before {
             content: counter(sidenote) ".\A0" attr(title);
         }
-
-        a[href]::before {
-            content: counter(sidenote) ".\A0" attr(href);
-        }
     }
 
     .SiteFooter {
         border-top: 1px solid $color-border;
         box-shadow: none;
+    }
+
+    .SiteFooter a {
+        text-decoration: none;
+    }
+
+    .SiteFooter a[rel="license"]::after,
+    .SiteFooter a[rel="alternate"]::after {
+        content: " (" attr(href) ")";
     }
 }
