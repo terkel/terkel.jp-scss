@@ -23,8 +23,8 @@
 @import "components/ArchivesList";
 @import "components/Subheader";
 
-// Media specipic styles
-@import "media/print";
-
 // Third-party libraries
 @import "vendor/mojik";
+
+// Media specific styles
+@import "media/print";
