@@ -4,6 +4,10 @@
     margin-bottom: 4.5rem;
     margin-top: 3.75rem;
 
+    :not(:lang(ja)) {
+        font-kerning: auto;
+    }
+
     h2:not(.Subheader),
     h3,
     h4,
