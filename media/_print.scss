@@ -74,6 +74,7 @@
             margin-left: 0;
         }
 
+        blockquote[cite]::before,
         a[href]:not([href^="#"])::before,
         abbr[title]::before,
         dfn[title]::before {
@@ -88,6 +89,10 @@
             margin-top: 0.5rem;
             overflow-wrap: break-word;
             width: 12rem;
+        }
+
+        blockquote[cite]::before {
+            content: "\261E\A0" attr(cite);
         }
 
         a[href]:not([href^="#"])::before {
