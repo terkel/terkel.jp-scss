@@ -23,6 +23,13 @@
         font-weight: 500;
     }
 
+    pre b, pre strong,
+    code b, code strong,
+    kbd b, kbd strong,
+    samp b, samp strong {
+        font-weight: bold;
+    }
+
     h2:not(.Subheader),
     h3,
     h4,

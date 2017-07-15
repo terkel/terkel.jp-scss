@@ -238,14 +238,35 @@ var {
 code,
 samp,
 kbd {
+    background-color: rgba(black, 0.04);
+    border-radius: 0.125em;
     color: rgba(black, 0.87);
     font-family: $font-family-mono;
+    margin-left: 0.125ch;
+    margin-right: 0.125ch;
+    padding: 0.125em 0.375ch;
+}
+
+pre code,
+pre samp,
+pre kbd {
+    background-color: transparent;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
 }
 
 a code,
 a samp,
 a kbd {
     color: inherit;
+}
+
+code *,
+samp *,
+kbd * {
+    font-family: inherit !important;
 }
 
 cite,
