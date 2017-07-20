@@ -1,11 +1,18 @@
 .MainBody {
-    font-family: $font-family-mincho;
     font-kerning: none;
     margin-bottom: 4.5rem;
     margin-top: 3.75rem;
 
     :not(:lang(ja)) {
         font-kerning: auto;
+    }
+
+    p,
+    ol,
+    ul,
+    dl {
+        color: black;
+        font-family: $font-family-mincho;
     }
 
     h2:not(.Subheader),
