@@ -5,6 +5,7 @@
     padding-bottom: 3rem;
 
     h1 {
+        color: black;
         font-family: $font-family-mincho;
         font-feature-settings: "palt";
         font-size: 1.75rem;
@@ -15,7 +16,6 @@
     }
 
     .meta {
-        color: $color-text-secondary;
         font-size: 0.75rem;
         line-height: 1.25;
         margin-bottom: -0.25em;

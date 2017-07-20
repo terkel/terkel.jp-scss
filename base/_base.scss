@@ -6,7 +6,7 @@ html {
 
 body {
     background-color: $color-background;
-    color: $color-text;
+    color: $color-text-primary;
     margin: 0 auto;
     max-width: calc(100vw - 2rem);
 
@@ -182,7 +182,6 @@ tfoot tr:not(:last-child):not(:only-child) th[colspan]::after {
 
 figcaption,
 caption {
-    color: $color-text-secondary;
     font-size: 0.75rem;
     line-height: 1.667;
     margin-bottom: -0.5em;

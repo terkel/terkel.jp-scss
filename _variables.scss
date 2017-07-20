@@ -12,9 +12,10 @@ $color-accent: change-color($color-blue, $lightness: 50% - percentage(1/16));
 // Site-wide colors
 $color-background: $color-light;
 $color-text: $color-dark;
+$color-text-primary: rgba($color-black, 0.87);
 $color-text-secondary: rgba($color-black, 0.54);
 $color-link: $color-accent;
-$color-border: rgba($color-black, 0.42);
+$color-border: rgba($color-black, 0.38);
 
 // Font families
 $font-family-system: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", "Helvetica Neue", "sans-serif", sans-serif, "Segoe UI Emoji";
