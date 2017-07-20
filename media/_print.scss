@@ -5,11 +5,11 @@
     *,
     *::before,
     *::after {
-        background-color: transparent !important;
         color: black !important;
     }
 
     body {
+        background-color: transparent;
         margin-left: 0;
         margin-right: 14rem;
         max-width: none;
