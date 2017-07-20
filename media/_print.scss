@@ -114,6 +114,7 @@
         text-decoration: none;
     }
 
+    .SiteFooter a[href^="https://typekit.com/colophons/"]::after,
     .SiteFooter a[rel="license"]::after,
     .SiteFooter a[rel="alternate"]::after {
         content: " (" attr(href) ")";
