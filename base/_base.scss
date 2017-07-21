@@ -5,8 +5,8 @@ html {
 }
 
 body {
-    background-color: $color-background;
-    color: $color-text-primary;
+    background-color: $color-offwhite;
+    color: $color-black-900;
     margin: 0 auto;
     max-width: calc(100vw - 2rem);
 
@@ -130,14 +130,14 @@ figure {
 }
 
 table {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $color-black-500;
     border-collapse: collapse;
 }
 
 thead,
 tfoot,
 tbody {
-    border-top: 1px solid $color-border;
+    border-top: 1px solid $color-black-500;
 }
 
 th,
@@ -146,7 +146,6 @@ td {
 }
 
 th {
-    color: rgba(black, 0.87);
     font-weight: bold;
 }
 
@@ -177,7 +176,7 @@ tfoot tr:not(:last-child):not(:only-child) th[colspan]::after {
     left: 0.5em;
     right: 0.5em;
     bottom: 0;
-    border-top: 1px solid $color-border;
+    border-top: 1px solid $color-black-500;
 }
 
 figcaption,
@@ -200,7 +199,7 @@ caption {
 
 
 a {
-    color: $color-accent;
+    color: $color-blue;
     text-decoration-skip: ink;
 
     &[href^="#fn-"] {
@@ -237,9 +236,9 @@ var {
 code,
 samp,
 kbd {
-    background-color: rgba(black, 0.04);
+    background-color: $color-black-100;
     border-radius: 0.125em;
-    color: rgba(black, 0.87);
+    color: $color-black-900;
     font-family: $font-family-mono;
     margin-left: 0.125ch;
     margin-right: 0.125ch;

@@ -1,11 +1,11 @@
 .MainHeader {
-    box-shadow: 0 1px $color-border;
+    box-shadow: 0 1px $color-black-500;
     min-height: 2rem;
     padding-top: 8rem;
     padding-bottom: 3rem;
 
     h1 {
-        color: black;
+        color: $color-black;
         font-family: $font-family-mincho;
         font-feature-settings: "palt";
         font-size: 1.75rem;
