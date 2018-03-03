@@ -24,11 +24,11 @@
     }
 
     .meta {
-        color: inherit;
+        color: $color-black-700;
         font-family: $font-family-system;
         font-kerning: auto;
-        font-size: 0.75rem;
-        line-height: 1.667;
+        font-size: 0.8125rem;
+        line-height: 1.539;
         margin-bottom: 0;
         margin-left: 0.25rem;
         margin-top: 0;
@@ -38,7 +38,7 @@
         &::after {
             content: "";
             display: inline-block;
-            height: 1.667em;
+            height: 1.539em;
         }
 
         &::after {
