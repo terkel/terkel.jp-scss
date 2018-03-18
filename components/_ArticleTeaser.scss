@@ -1,6 +1,7 @@
 .ArticleTeaser {
     @include list-item-dash();
     font-family: $font-family-mincho;
+    line-height: 1.75;
     margin-bottom: 1.75rem;
     margin-left: 2rem;
     margin-top: 1.75rem;
