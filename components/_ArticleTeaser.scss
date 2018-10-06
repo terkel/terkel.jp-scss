@@ -1,6 +1,7 @@
 .ArticleTeaser {
     @include list-item-dash();
-    font-family: $font-family-mincho;
+    font-family: $font-family-mincho-punc;
+    font-weight: $font-weight-mincho-normal;
     line-height: 1.75;
     margin-bottom: 1.75rem;
     margin-left: 2rem;
@@ -12,12 +13,12 @@
     }
 
     h3 {
-        font-family: $font-family-mincho;
+        font-family: $font-family-mincho-punc;
+        font-weight: $font-weight-mincho-normal;
         font-feature-settings: normal;
         font-kerning: none;
         font-size: 1rem;
         line-height: 1.75;
-        font-weight: normal;
         padding-bottom: 0;
         padding-top: 0;
         margin-bottom: 0;
@@ -26,7 +27,8 @@
 
     .meta {
         color: $color-black-700;
-        font-family: $font-family-system;
+        font-family: $font-family-gothic;
+        font-weight: $font-weight-gothic-normal;
         font-kerning: auto;
         font-size: 0.8125rem;
         line-height: 1.539;

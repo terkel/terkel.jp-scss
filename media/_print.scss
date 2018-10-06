@@ -58,9 +58,9 @@
         dfn[title]::after {
             bottom: -0.25em;
             content: counter(sidenote);
-            font-family: $font-family-system;
+            font-family: $font-family-gothic;
+            font-weight: $font-weight-gothic-normal;
             font-size: 0.625rem;
-            font-weight: normal;
             line-height: 0;
             margin-left: 0.25em;
             margin-right: 0.25em;
@@ -73,7 +73,8 @@
         abbr[title]::before,
         dfn[title]::before {
             clear: right;
-            font-family: $font-family-system;
+            font-family: $font-family-gothic;
+            font-weight: $font-weight-gothic-normal;
             font-size: 0.625rem;
             font-weight: normal;
             float: right;
