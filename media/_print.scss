@@ -68,12 +68,6 @@
             display: inline-block;
         }
 
-        .mjk-western:not(.mjk-western-atParagraphEnd):not(.mjk-western-noSpaceAfter) + a[href]::after,
-        .mjk-western:not(.mjk-western-atParagraphEnd):not(.mjk-western-noSpaceAfter) + abbr[title]::after,
-        .mjk-western:not(.mjk-western-atParagraphEnd):not(.mjk-western-noSpaceAfter) + dfn[title]::after {
-            margin-left: 0;
-        }
-
         blockquote[cite]::before,
         a[href]:not([href^="#"])::before,
         abbr[title]::before,
