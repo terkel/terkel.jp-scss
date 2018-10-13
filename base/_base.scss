@@ -1,3 +1,11 @@
+:lang(ja) {
+    font-kerning: none;
+}
+
+:not(:lang(ja)) {
+    font-kerning: auto;
+}
+
 html {
     font-family: $font-family-mincho-punc;
     font-weight: $font-weight-mincho-normal;

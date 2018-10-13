@@ -7,10 +7,6 @@
         hanging-punctuation: allow-end;
     }
 
-    :not(:lang(ja)) {
-        font-kerning: auto;
-    }
-
     h2:not(.Subheader),
     h3,
     h4,
