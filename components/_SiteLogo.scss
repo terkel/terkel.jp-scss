@@ -1,0 +1,30 @@
+.SiteLogo {
+    display: flex;
+    align-items: baseline;
+    color: $color-gothic-bold;
+    font-family: $font-family-gothic;
+    font-weight: $font-weight-gothic-bold;
+    font-kerning: auto;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    margin: 0;
+    padding-top: var(--SiteLogo-padding-top, 0);
+    padding-bottom: var(--SiteLogo-padding-bottom, 0);
+}
+
+.SiteLogo::after {
+    content: "";
+    border-top: 1px solid $color-divider;
+    flex-grow: 1;
+    margin-left: 0.25em;
+}
+
+.SiteLogo.-right::after {
+    margin-left: 0;
+    margin-right: 0.25em;
+    order: -1;
+}
+
+.SiteLogo__link {
+    text-decoration: none;
+}

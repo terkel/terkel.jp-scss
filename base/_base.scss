@@ -1,3 +1,15 @@
+:root {
+    --font-size-medium: 1rem;
+    --font-size-small: 1rem * 4 / 5;
+
+    --line-height-medium: 1.75em;
+    --line-height-small: 1.875em;
+
+    --extra-half-leading: 0.3125em;
+
+    --vertical-rhythm-unit: 1.75rem;
+}
+
 :lang(ja) {
     font-kerning: none;
 }
