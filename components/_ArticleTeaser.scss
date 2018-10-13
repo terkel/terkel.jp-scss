@@ -1,7 +1,5 @@
 .ArticleTeaser {
     @include list-item-dash();
-    font-family: $font-family-mincho-punc;
-    font-weight: $font-weight-mincho-normal;
     line-height: 1.75;
     margin-bottom: 1.75rem;
     margin-left: 2rem;
@@ -27,8 +25,6 @@
 
     .meta {
         color: $color-gray-700;
-        font-family: $font-family-gothic;
-        font-weight: $font-weight-gothic-normal;
         font-kerning: auto;
         font-size: 0.8125rem;
         line-height: 1.539;
