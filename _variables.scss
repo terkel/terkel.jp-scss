@@ -14,21 +14,27 @@ $color-gray-800: hsl(0, 0%, 26%);
 $color-gray-900: hsl(0, 0%, 13%);
 
 $color-blue: hsl(217, 55%, 43%);
+$color-orange: hsl(17, 79%, 48%);
+$color-yellow: hsl(49, 93%, 83%);
 
 $color-body-bg: $color-white;
 $color-body-fg: $color-black;
+$color-muted-fg: $color-gray-600;
 $color-gothic-bold: $color-gray-800;
 $color-link-fg: $color-blue;
+$color-highlight-bg: $color-yellow;
 $color-divider: hsla(0, 0%, 0%, 0.12);
 
 // Font families
-$font-family-gothic: "source-han-sans-japanese", sans-serif;
+$font-family-gothic: "source-han-sans-japanese", "Helvetica Neue", "Arial", sans-serif;
 $font-family-gothic-punc: "YakuCalt Gothic", $font-family-gothic;
-$font-family-mincho: "source-han-serif-japanese", serif;
+$font-family-mincho: "source-han-serif-japanese", "Hiragino Mincho ProN", serif;
 $font-family-mincho-punc: "YakuCalt Mincho", $font-family-mincho;
-$font-family-mono: "source-code-pro", "source-han-sans-japanese", monospace;
+$font-family-mono: "source-code-pro", "Courier", "source-han-sans-japanese", monospace;
+$font-monowidth: 0.6;
 
 // Font weights
-$font-weight-mincho-normal: 400;
-$font-weight-gothic-normal: 400;
+$font-weight-gothic-normal: 350;
 $font-weight-gothic-bold: 700;
+$font-weight-mincho-normal: 400;
+$font-weight-mono-normal: 400;

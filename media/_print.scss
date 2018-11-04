@@ -13,7 +13,7 @@
         margin-left: 0;
         margin-right: 14rem;
         max-width: none;
-        width: 40rem;
+        width: 36rem;
     }
 
     h2,
@@ -34,17 +34,7 @@
         page-break-inside: avoid;
     }
 
-    .SiteHeader,
-    .MainHeader {
-        border-bottom: 1px solid $color-gray-500;
-        box-shadow: none;
-    }
-
-    .SiteHeader nav {
-        display: none;
-    }
-
-    .MainBody {
+    main {
         counter-reset: sidenote;
 
         a[href]:not([href^="#"]),
@@ -100,18 +90,28 @@
         }
     }
 
-    .SiteFooter {
-        border-top: 1px solid $color-gray-500;
-        box-shadow: none;
+    .SiteHeader {
+        display: none;
     }
 
     .SiteFooter a {
         text-decoration: none;
     }
 
-    .SiteFooter a[href^="https://typekit.com/colophons/"]::after,
+    .SiteFooter__nav {
+        display: none;
+    }
+
+    .SiteFooter__colophon {
+        margin-top: calc(var(--caption-line-height) * 2);
+    }
+
+    .SiteFooter__colophon::before {
+        content: normal;
+    }
+
     .SiteFooter a[rel="license"]::after,
-    .SiteFooter a[rel="alternate"]::after {
-        content: " (" attr(href) ")";
+    .SiteFooter a[rel="author"]:not([href^="mailto:"])::after {
+        content: "（" attr(href) "）";
     }
 }

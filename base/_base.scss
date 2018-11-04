@@ -1,13 +1,62 @@
 :root {
-    --font-size-medium: 1rem;
-    --font-size-small: 1rem * 4 / 5;
+    --body-font-size: 1rem;
+    --body-line-height: 1.75em;
+    --body-indent-size: calc(var(--body-font-size) * 2);
 
-    --line-height-medium: 1.75em;
-    --line-height-small: 1.875em;
+    --h1-font-size: calc(var(--body-font-size) *  8 / 5);;
+    --h1-line-height: 1.40625em;
+    --h2-font-size: calc(var(--body-font-size) *  8 / 7);
+    --h2-line-height: 1.53125em;
+    --h3-font-size: calc(var(--body-font-size) *  8 / 10);
+    --h3-line-height: 1.5625em;
+    --caption-font-size: calc(var(--body-font-size) *  8 / 10);
+    --caption-line-height: 1.5625em;
+    --codeblock-font-size: calc(var(--body-font-size) *  8 / 9);
+    --codeblock-line-height: 1.40625em;
 
-    --extra-half-leading: 0.3125em;
+    --vertical-rhythm-unit: calc(var(--body-font-size) * 1.75);
+    --extra-leading: 0.25rem;
 
-    --vertical-rhythm-unit: 1.75rem;
+    // 720px/640px or 1280px width
+    @media (min-width: 45em) and (min-height: 40rem), (min-width: 80em) {
+        --c: red;
+        --body-font-size: #{1rem * 16 / 15};
+        --body-line-height: 1.875em;
+
+        --h1-font-size: calc(var(--body-font-size) * 8 / 4);
+        --h2-line-height: 1.640625em;
+        --h3-line-height: 1.7578125em;
+        --caption-line-height: 1.7578125em;
+        --codeblock-line-height: 1.58203125em;
+
+        --vertical-rhythm-unit: calc(var(--body-font-size) * 1.875);
+    }
+}
+
+:root {
+    @media (orientation: portrait) {
+        @media (min-width: 20em) { --body-width: 18em; } // 320px
+        @media (min-width: 22.5em) { --body-width: 20em; } // 360px
+        @media (min-width: 25em) { --body-width: 22em; } // 400px
+        @media (min-width: 30em) { --body-width: 26em; } // 480px
+        @media (min-width: 37.5em) { --body-width: 32em; } // 600px
+    }
+
+    @media (orientation: landscape) {
+        @media (min-width: 30em) { --body-width: 24em; } // 480px
+        @media (min-width: 35em) { --body-width: 28em; } // 560px
+        @media (min-width: 40em) { --body-width: 32em; } // 640px
+    }
+
+    // 720px
+    @media (min-width: 45em) {
+        --body-width: 36em;
+    }
+
+    // 600px or landscape
+    @media (min-width: 37.5em), (orientation: landscape) {
+        --body-hanging-punctuation: allow-end;
+    }
 }
 
 :lang(ja) {
@@ -19,85 +68,144 @@
 }
 
 html {
-    font-family: $font-family-mincho-punc;
-    font-weight: $font-weight-mincho-normal;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 
 body {
+    font-family: $font-family-mincho-punc;
+    font-weight: $font-weight-mincho-normal;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    // word-wrap: break-word; // for IE 11
+    overflow-wrap: break-word;
     background-color: $color-body-bg;
     color: $color-body-fg;
     margin: 0 auto;
+    width: var(--body-width, auto);
     max-width: calc(100vw - 2rem);
+}
 
-    @media (orientation: portrait) {
-        @media (min-width: 20em) { width: 18rem; }
-        @media (min-width: 22em) { width: 20rem; }
-        @media (min-width: 25em) { width: 22rem; }
-        @media (min-width: 30em) { width: 27rem; }
-        @media (min-width: 36em) { width: 32rem; }
-    }
+main::after {
+    content: "✿";
+    display: block;
+    text-align: center;
+    margin-top: var(--vertical-rhythm-unit);
+    color: $color-orange;
+    color: $color-gray-400;
+}
 
-    @media (orientation: landscape) {
-        @media (min-width: 30em) { width: 24rem; }
-        @media (min-width: 35em) { width: 28rem; }
-        @media (min-width: 40em) { width: 32rem; }
-        @media (min-width: 45em) { width: 36rem; }
-    }
+h1:lang(ja),
+h2:lang(ja) {
+    font-feature-settings: "palt";
+    font-kerning: auto;
+}
 
-    @media (orientation: portrait) and (min-width: 45em), (min-width: 50em) {
-        width: 40rem;
-    }
+h1 {
+    font-family: $font-family-mincho;
+    font-weight: $font-weight-mincho-normal;
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h2 {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1.75rem;
-    margin-top: 3.5rem;
-    padding-bottom: 0.125rem;
-    padding-top: 0.125rem;
+    font-family: $font-family-gothic;
+    font-weight: $font-weight-gothic-bold;
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    color: $color-gray-800;
+
+    margin-top: var(--vertical-rhythm-unit);
+    margin-bottom: var(--vertical-rhythm-unit);
 }
 
-h3,
-h4,
-h5,
-h6 {
-    font-size: 0.875rem;
-    line-height: 1.429;
+h3 {
+    font-family: $font-family-gothic-punc;
+    font-weight: $font-weight-gothic-bold;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    color: $color-gray-900;
+
+    padding-top: var(--extra-leading);
+    padding-bottom: var(--extra-leading);
+    margin-top: var(--vertical-rhythm-unit);
     margin-bottom: 0;
-    margin-top: 1.75rem;
-    padding-bottom: 0.1875rem;
-    padding-top: 0.3125rem;
 }
 
 p,
 ol,
 ul,
 dl {
-    line-height: 1.75;
-    margin-bottom: 1.75rem;
-    margin-top: 1.75rem;
+    hanging-punctuation: var(--body-hanging-punctuation, none);
+    margin-top: var(--vertical-rhythm-unit);
+    margin-bottom: 0;
+}
+
+p + p {
+    margin-top: 0;
+    text-indent: var(--body-indent-size);
+}
+
+section + p:before {
+    content: "§";
+    display: block;
+    margin-bottom: var(--vertical-rhythm-unit);
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    margin: 0;
 }
 
 ol,
-ul {
-    padding-left: 2rem;
+ul,
+dl {
+    padding-left: var(--body-indent-size);
 }
 
-ul li {
-    @include list-item-dash();
+ol {
+    counter-reset: ordered-list;
+}
+
+li {
+    list-style-type: none;
+    position: relative;
+}
+
+li::before {
+    margin-right: 1em;
+    position: absolute;
+    right: 100%;
+}
+
+ol li {
+    counter-increment: ordered-list;
+}
+
+ol li::before {
+    content: counter(ordered-list);
+}
+
+ul li::before {
+    content: "\2022";
+}
+
+dt {
+    text-indent: calc(0px - var(--body-indent-size));
 }
 
 dd {
-    margin-left: 2rem;
+    margin-left: 0;
 }
 
-h3 + p, h4 + p, h5 + p, h6 + p,
-h3 + ol, h4 + ol, h5 + ol, h6 + ol,
-h3 + ul, h4 + ul, h5 + ul, h6 + ul,
-h3 + dl, h4 + dl, h5 + dl, h6 + dl {
+h3 + p,
+h3 + ol,
+h3 + ul,
+h3 + dl {
     margin-top: 0;
 }
 
@@ -111,101 +219,141 @@ ol dl, ul dl, dl dl {
 
 pre {
     font-family: $font-family-mono;
-    font-size: 0.875rem;
-    line-height: 1.429;
-    margin-bottom: 1.75rem;
-    margin-top: 1.75rem;
+    font-size: var(--codeblock-font-size);
+    line-height: var(--codeblock-line-height);
+
+    padding-left: var(--body-indent-size);
+    padding-top: var(--extra-leading);
+    padding-bottom: var(--extra-leading);
+    margin-top: var(--vertical-rhythm-unit);
+    margin-bottom: var(--vertical-rhythm-unit);
     overflow: auto;
-    padding-bottom: 0.125rem;
-    padding-left: 2rem;
-    padding-top:0.375rem;
+    overflow-wrap: normal; // for Safari
+    -webkit-overflow-scrolling: touch;
 }
 
 blockquote {
-    margin: 1.75rem 0 1.75rem 2rem;
+    padding-left: var(--body-indent-size);
+    margin: var(--vertical-rhythm-unit) 0;
+    position: relative;
 
-    p {
-        margin-bottom: 0;
-        margin-top: 0;
+}
 
-    }
+blockquote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc((var(--body-line-height) - 1em) / 2);
+    bottom: calc((var(--body-line-height) - 1em) / 2);
+    border-left: 2px solid $color-divider;
+}
 
-    p + p {
-        text-indent: 1em;
-    }
-
-    footer {
-        text-align: right;
-    }
+blockquote footer {
+    text-align: right;
 }
 
 figure,
 table {
-    font-size: 0.75rem;
-    line-height: 1.667;
-    margin: 3rem auto;
+    font-family: $font-family-gothic;
+    font-weight: $font-weight-gothic-normal;
+    font-size: var(--caption-font-size);
+    line-height: var(--caption-line-height);
+    margin: var(--vertical-rhythm-unit) auto;
 }
 
 figure {
-    display: table;
+    display: grid;
+    grid-template-rows:
+        calc(var(--caption-line-height) / 2)
+        auto
+        calc(var(--caption-line-height) / 2)
+        auto;
+    grid-template-areas:
+        "."
+        "figure"
+        "."
+        "caption";
+}
+
+figure > :not(figcaption) {
+    grid-area: figure;
+    justify-self: center;
+}
+
+figure img {
+    box-shadow: 0 0 0 1px $color-divider;
+}
+
+figcaption {
+    grid-area: caption;
 }
 
 table {
-    border-bottom: 1px solid $color-gray-500;
     border-collapse: collapse;
-}
-
-thead,
-tfoot,
-tbody {
-    border-top: 1px solid $color-gray-500;
+    display: block;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 th,
 td {
-    padding: 0.25rem 1em;
+    padding: 0;
+    white-space: nowrap;
+}
+
+th:not(:first-child),
+td:not(:first-child) {
+    padding-left: 2em;
+}
+
+th {
+    font-family: $font-family-gothic-punc;
+    font-weight: $font-weight-gothic-bold;
+    text-align: left;
+    color: $color-gray-900;
+}
+
+thead th,
+thead td {
+    padding-top: var(--extra-leading);
 }
 
 tbody th,
-tfoot th {
-    text-align: left;
-}
-
-tbody tr:first-child th,
-tbody tr:first-child td {
-    padding-top: 0.75rem;
+tbody td {
+    position: relative;
+    padding-top: var(--caption-line-height);
 }
 
 tbody tr:last-child th,
 tbody tr:last-child td {
-    padding-bottom: 0.75rem;
+    padding-bottom: var(--caption-line-height);
 }
 
-thead tr:not(:last-child):not(:only-child) th[colspan],
-tfoot tr:not(:last-child):not(:only-child) th[colspan] {
-    position: relative;
-}
-
-thead tr:not(:last-child):not(:only-child) th[colspan]::after,
-tfoot tr:not(:last-child):not(:only-child) th[colspan]::after {
+tbody th::before,
+tbody td::before,
+tbody tr:last-child th::after,
+tbody tr:last-child td::after {
     content: "";
     position: absolute;
-    left: 0.5em;
-    right: 0.5em;
-    bottom: 0;
-    border-top: 1px solid $color-gray-500;
+    left: 0;
+    right: 0;
+    border-top: 1px solid $color-divider;
+}
+
+tbody th::before,
+tbody td::before {
+    top: calc(var(--caption-line-height) / 2);
+}
+
+tbody tr:last-child th::after,
+tbody tr:last-child td::after {
+    bottom: calc(var(--caption-line-height) / 2);
 }
 
 figcaption,
 caption {
-    font-size: 0.75rem;
-    line-height: 1.667;
-    margin-bottom: -0.5em;
-    margin-top: 1.167em;
-
-    a {
-        color: inherit;
-    }
+    padding-bottom: var(--extra-leading);
+    color: $color-muted-fg;
 }
 
 caption {
@@ -213,27 +361,28 @@ caption {
     text-align: left;
 }
 
-
-
 a {
     color: $color-link-fg;
-    text-decoration-skip: ink;
+}
 
-    &[href^="#fn-"] {
-        font-family: $font-family-mono;
-        font-weight: bold;
-        padding-left: 0.25em;
-        padding-right: 0.25em;
-        text-decoration: none;
-    }
+a[href^="#fn-"],
+a[href^="#fnref-"] {
+    font-family: $font-family-mono;
+    font-weight: bold;
+    line-height: 0;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    text-decoration: none;
+}
 
-    &[href^="#fnref-"] {
-        text-decoration: none;
-    }
+mark,
+[id^="fn-"]:target,
+[id^="fnref-"]:target {
+    background-color: $color-highlight-bg;
+}
 
-    &:not([href]) {
-        cursor: default;
-    }
+a:not([href]) {
+    cursor: default;
 }
 
 b,
@@ -253,32 +402,19 @@ var {
 code,
 samp,
 kbd {
-    background-color: $color-gray-100;
-    border-radius: 0.125em;
     color: $color-gray-900;
     font-family: $font-family-mono;
-    font-weight: $font-weight-gothic-normal;
-    margin-left: 0.125ch;
-    margin-right: 0.125ch;
-    padding-left: 0.375ch;
-    padding-right: 0.375ch;
+    // font-weight: $font-weight-mono-normal;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
 }
 
 pre code,
 pre samp,
 pre kbd {
-    background-color: transparent;
-    border-radius: 0;
     line-height: inherit;
     margin-left: 0;
     margin-right: 0;
-    padding: 0;
-}
-
-a code,
-a samp,
-a kbd {
-    color: inherit;
 }
 
 code *,
@@ -287,13 +423,28 @@ kbd * {
     font-family: inherit !important;
 }
 
-cite,
-dfn,
-em,
-i {
-    @include lang-cjk() {
-        font-style: normal;
-    }
+cite:lang(ja),
+dfn:lang(ja),
+em:lang(ja),
+i:lang(ja) {
+    font-style: normal;
+}
+
+b,
+strong,
+dfn {
+    color: $color-gray-900;
+    font-family: $font-family-gothic-punc;
+    font-weight: $font-weight-gothic-bold;
+}
+
+a code,
+a samp,
+a kbd,
+a b,
+a strong,
+a dfn {
+    color: inherit;
 }
 
 sub,
