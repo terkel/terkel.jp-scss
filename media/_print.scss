@@ -16,6 +16,10 @@
         width: 36rem;
     }
 
+    h1 {
+        margin-top: calc(var(--vertical-rhythm-unit) * 2);
+    }
+
     h2,
     h3 {
         page-break-after: avoid;
@@ -32,6 +36,10 @@
     tr,
     img {
         page-break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     main {
@@ -56,6 +64,7 @@
             margin-right: 0.25em;
             position: relative;
             display: inline-block;
+            text-indent: 0;
         }
 
         blockquote[cite]::before,
@@ -74,6 +83,7 @@
             margin-top: 0.5rem;
             overflow-wrap: break-word;
             width: 12rem;
+            text-indent: 1em;
         }
 
         blockquote[cite]::before {
@@ -94,10 +104,6 @@
         display: none;
     }
 
-    .SiteFooter a {
-        text-decoration: none;
-    }
-
     .SiteFooter__nav {
         display: none;
     }
@@ -112,6 +118,6 @@
 
     .SiteFooter a[rel="license"]::after,
     .SiteFooter a[rel="author"]:not([href^="mailto:"])::after {
-        content: "（" attr(href) "）";
+        content: " (" attr(href) ")";
     }
 }
