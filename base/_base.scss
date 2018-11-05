@@ -19,7 +19,6 @@
 
     // 720px/640px or 1280px width
     @media (min-width: 45em) and (min-height: 40rem), (min-width: 80em) {
-        --c: red;
         --body-font-size: #{1rem * 16 / 15};
         --body-line-height: 1.875em;
 
