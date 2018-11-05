@@ -319,20 +319,24 @@ thead td {
 }
 
 tbody th,
-tbody td {
+tbody td,
+tfoot th,
+tfoot td {
     position: relative;
     padding-top: var(--caption-line-height);
 }
 
-tbody tr:last-child th,
-tbody tr:last-child td {
+table > :last-child tr:last-child th,
+table > :last-child tr:last-child td {
     padding-bottom: var(--caption-line-height);
 }
 
 tbody th::before,
 tbody td::before,
-tbody tr:last-child th::after,
-tbody tr:last-child td::after {
+tfoot th::before,
+tfoot td::before,
+table > :last-child tr:last-child th::after,
+table > :last-child tr:last-child td::after {
     content: "";
     position: absolute;
     left: 0;
@@ -341,12 +345,22 @@ tbody tr:last-child td::after {
 }
 
 tbody th::before,
-tbody td::before {
+tbody td::before,
+tfoot th::before,
+tfoot td::before {
     top: calc(var(--caption-line-height) / 2);
 }
 
-tbody tr:last-child th::after,
-tbody tr:last-child td::after {
+tbody + tbody tr:first-child th::before,
+tbody + tbody tr:first-child td::before,
+tfoot tr:first-child th::before,
+tfoot tr:first-child td::before {
+    top: calc(var(--caption-line-height) / 2 - 1px);
+    border-top-width: 3px;
+}
+
+table > :last-child tr:last-child th::after,
+table > :last-child tr:last-child td::after {
     bottom: calc(var(--caption-line-height) / 2);
 }
 
