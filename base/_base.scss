@@ -238,7 +238,7 @@ blockquote {
 
 }
 
-blockquote::before {
+blockquote::after {
     content: "";
     position: absolute;
     left: 0;

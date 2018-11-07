@@ -33,6 +33,15 @@
         display: table-header-group;
     }
 
+    blockquote::after,
+    th::before,
+    th::after,
+    td::before,
+    td::after,
+    .SiteLogo::after {
+        border-color: silver !important;
+    }
+
     tr,
     img {
         page-break-inside: avoid;
@@ -100,6 +109,10 @@
         }
     }
 
+    main::after {
+        color: silver !important;
+    }
+
     .SiteHeader {
         display: none;
     }
@@ -116,8 +129,7 @@
         content: normal;
     }
 
-    .SiteFooter a[rel="license"]::after,
     .SiteFooter a[rel="author"]:not([href^="mailto:"])::after {
-        content: " (" attr(href) ")";
+        content: ": " attr(href);
     }
 }
