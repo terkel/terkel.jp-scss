@@ -70,6 +70,7 @@ html {
 body {
     font-family: $font-family-mincho-punc;
     font-weight: $font-weight-mincho-normal;
+    font-feature-settings: $opentype-faetures-japanese;
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
     // word-wrap: break-word; // for IE 11
@@ -86,13 +87,12 @@ main::after {
     display: block;
     text-align: center;
     margin-top: var(--vertical-rhythm-unit);
-    color: $color-orange;
     color: $color-gray-400;
 }
 
 h1:lang(ja),
 h2:lang(ja) {
-    font-feature-settings: "palt";
+    font-feature-settings: $opentype-faetures-japanese-proportional;
     font-kerning: auto;
 }
 
