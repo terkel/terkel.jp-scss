@@ -11,9 +11,8 @@
     body {
         background-color: transparent;
         margin-left: 0;
-        margin-right: 14rem;
+        margin-right: calc(var(--sidenote-width) + var(--sidenote-gutter));
         max-width: none;
-        width: 36rem;
     }
 
     h1 {
@@ -63,15 +62,15 @@
         a[href]:not([href^="#"])::after,
         abbr[title]::after,
         dfn[title]::after {
-            bottom: -0.25em;
             content: counter(sidenote);
             font-family: $font-family-gothic;
             font-weight: $font-weight-gothic-normal;
-            font-size: 0.625rem;
+            font-size: var(--sidenote-font-size);
             line-height: 0;
+            position: relative;
+            top: -0.5em;
             margin-left: 0.25em;
             margin-right: 0.25em;
-            position: relative;
             display: inline-block;
             text-indent: 0;
         }
@@ -83,15 +82,14 @@
             clear: right;
             font-family: $font-family-gothic;
             font-weight: $font-weight-gothic-normal;
-            font-size: 0.625rem;
-            font-weight: normal;
+            font-size: var(--sidenote-font-size);
+            line-height: var(--sidenote-line-height);
             float: right;
-            line-height: 1.6;
-            margin-right: -14rem;
-            margin-bottom: -0.5rem;
-            margin-top: 0.5rem;
+            margin-right: calc(0px - var(--sidenote-width) - var(--sidenote-gutter));
+            margin-bottom: calc(0px - var(--extra-leading));
+            margin-top: var(--extra-leading);
             overflow-wrap: break-word;
-            width: 12rem;
+            width: var(--sidenote-width);
             text-indent: 1em;
         }
 
@@ -117,6 +115,10 @@
         display: none;
     }
 
+    .SiteFooter {
+        page-break-inside : avoid;
+    }
+
     .SiteFooter__nav {
         display: none;
     }
@@ -127,9 +129,5 @@
 
     .SiteFooter__colophon::before {
         content: normal;
-    }
-
-    .SiteFooter a[rel="author"]:not([href^="mailto:"])::after {
-        content: ": " attr(href);
     }
 }

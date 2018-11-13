@@ -19,7 +19,7 @@
     --extra-leading: 0.25rem;
 
     // 720px/640px or 1280px width
-    @media (min-width: 45em) and (min-height: 40rem), (min-width: 80em) {
+    @media (min-width: 45em) and (min-height: 40rem), (min-width: 80em), print {
         --body-font-size: #{1rem * 16 / 15};
         --body-line-height: 1.875em;
 
@@ -30,6 +30,13 @@
         --codeblock-line-height: 1.58203125em;
 
         --vertical-rhythm-unit: calc(var(--body-font-size) * 1.875);
+    }
+
+    @media print {
+        --sidenote-width: calc(var(--body-font-size) * 12);
+        --sidenote-gutter: calc(var(--body-font-size) * 2);
+        --sidenote-font-size: calc(var(--body-font-size) *  8 / 12);
+        --sidenote-line-height: 1.7578125em;
     }
 }
 
@@ -49,7 +56,7 @@
     }
 
     // 720px
-    @media (min-width: 45em) {
+    @media (min-width: 45em), print {
         --body-width: 36em;
     }
 }
