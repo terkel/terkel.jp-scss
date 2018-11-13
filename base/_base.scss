@@ -82,6 +82,8 @@ body {
     line-height: var(--body-line-height);
     // word-wrap: break-word; // for IE 11
     overflow-wrap: break-word;
+    hyphens: auto;
+
     background-color: $color-body-bg;
     color: $color-body-fg;
     margin: 0 auto;
