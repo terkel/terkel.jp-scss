@@ -115,6 +115,20 @@ h1 {
     margin-bottom: 0;
 }
 
+h1 + footer {
+    font-size: var(--caption-font-size);
+    line-height: var(--caption-line-height);
+    color: $color-mincho-muted;
+
+    padding-top: var(--extra-leading);
+    padding-bottom: var(--extra-leading);
+}
+
+h1 + :not(footer),
+h1 + footer + * {
+    margin-top: calc(var(--vertical-rhythm-unit) * 2);
+}
+
 h2 {
     font-family: $font-family-gothic;
     font-weight: $font-weight-gothic-bold;
