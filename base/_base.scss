@@ -137,7 +137,7 @@ h2 {
     font-weight: $font-weight-gothic-bold;
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
-    color: $color-gray-800;
+    color: $color-gothic-bold;
 
     margin-top: var(--vertical-rhythm-unit);
     margin-bottom: var(--vertical-rhythm-unit);
@@ -148,7 +148,7 @@ h3 {
     font-weight: $font-weight-gothic-bold;
     font-size: var(--h3-font-size);
     line-height: var(--h3-line-height);
-    color: $color-gray-900;
+    color: $color-gothic-bold;
 
     padding-top: var(--extra-leading);
     padding-bottom: var(--extra-leading);
@@ -345,8 +345,8 @@ td:not(:first-child) {
 th {
     font-family: $font-family-gothic-punc;
     font-weight: $font-weight-gothic-bold;
+    color: $color-gothic-bold;
     text-align: left;
-    color: $color-gray-900;
 }
 
 thead th,
@@ -452,9 +452,8 @@ var {
 code,
 samp,
 kbd {
-    color: $color-gray-900;
     font-family: $font-family-mono;
-    // font-weight: $font-weight-mono-normal;
+    color: $color-mono;
     margin-left: 0.1em;
     margin-right: 0.1em;
 }
@@ -480,9 +479,9 @@ cite:lang(ja):lang(ko):lang(zh) {
 b,
 strong,
 dfn {
-    color: $color-gray-900;
     font-family: $font-family-gothic-punc;
     font-weight: $font-weight-gothic-bold;
+    color: $color-gothic-bold;
 }
 
 a code,
