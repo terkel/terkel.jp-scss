@@ -15,6 +15,9 @@
     --codeblock-font-size: calc(var(--body-font-size) *  8 / 9);
     --codeblock-line-height: 1.40625em;
 
+    --non-cjk-body-font-size: calc(var(--body-font-size) *  9 / 8);
+    --non-cjk-mono-font-size: calc(var(--non-cjk-body-font-size) *  8 / 9);
+
     --vertical-rhythm-unit: calc(var(--body-font-size) * 1.75);
     --extra-leading: 0.25rem;
 
@@ -257,12 +260,27 @@ blockquote {
 
 }
 
+blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) {
+    font-family: $font-family-serif;
+    font-size: var(--non-cjk-body-font-size);
+    color: $color-serif;
+}
+
+blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) code,
+blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) samp,
+blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) kbd {
+    font-size: var(--non-cjk-mono-font-size);
+    color: inherit;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 blockquote::after {
     content: "";
     position: absolute;
     left: 0;
-    top: calc((var(--body-line-height) - 1em) / 2);
-    bottom: calc((var(--body-line-height) - 1em) / 2);
+    top: calc((var(--vertical-rhythm-unit) - var(--body-font-size)) / 2);
+    bottom: calc((var(--vertical-rhythm-unit) - var(--body-font-size)) / 2);
     border-left: 2px solid $color-divider;
 }
 
@@ -455,10 +473,7 @@ kbd * {
     font-family: inherit !important;
 }
 
-cite:lang(ja),
-dfn:lang(ja),
-em:lang(ja),
-i:lang(ja) {
+cite:lang(ja):lang(ko):lang(zh) {
     font-style: normal;
 }
 
