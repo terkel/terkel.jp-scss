@@ -391,8 +391,7 @@ tbody + tbody tr:first-child th::before,
 tbody + tbody tr:first-child td::before,
 tfoot tr:first-child th::before,
 tfoot tr:first-child td::before {
-    top: calc(var(--caption-line-height) / 2 - 1px);
-    border-top-width: 3px;
+    border-top-width: 2px;
 }
 
 table > :last-child tr:last-child th::after,
