@@ -94,16 +94,16 @@
         }
 
         blockquote[cite]::before {
-            content: "\261E\A0" attr(cite);
+            content: "\261E " attr(cite);
         }
 
         a[href]:not([href^="#"])::before {
-            content: counter(sidenote) ".\A0" attr(href);
+            content: counter(sidenote) ". " attr(href);
         }
 
         abbr[title]::before,
         dfn[title]::before {
-            content: counter(sidenote) ".\A0" attr(title);
+            content: counter(sidenote) ". " attr(title);
         }
     }
 
