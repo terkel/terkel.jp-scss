@@ -14,6 +14,8 @@
     --caption-line-height: 1.5625em;
     --codeblock-font-size: calc(var(--body-font-size) *  8 / 9);
     --codeblock-line-height: 1.40625em;
+    --endmark-font-size: calc(var(--body-font-size) * 8 / 5);
+    --endmark-line-height: var(--vertical-rhythm-unit);
 
     --non-cjk-body-font-size: calc(var(--body-font-size) *  9 / 8);
     --non-cjk-mono-font-size: calc(var(--non-cjk-body-font-size) *  8 / 9);
@@ -95,11 +97,18 @@ body {
 }
 
 main::after {
-    content: "✿";
+    content: "＊";
     display: block;
     text-align: center;
     margin-top: var(--vertical-rhythm-unit);
-    color: $color-gray-400;
+}
+
+.wf-ten-mincho-text-n4-active main::after {
+    content: "🐓";
+    font-family: $font-family-title;
+    font-feature-settings: "ss03";
+    font-size: var(--endmark-font-size);
+    line-height: var(--endmark-line-height);
 }
 
 h1:lang(ja),
@@ -109,8 +118,8 @@ h2:lang(ja) {
 }
 
 h1 {
-    font-family: $font-family-mincho;
-    font-weight: $font-weight-mincho-normal;
+    font-family: $font-family-title;
+    font-weight: $font-weight-title;
     font-size: var(--h1-font-size);
     line-height: var(--h1-line-height);
 
