@@ -284,15 +284,6 @@ blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) kbd {
     margin-right: 0;
 }
 
-blockquote::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: calc((var(--vertical-rhythm-unit) - var(--body-font-size)) / 2);
-    bottom: calc((var(--vertical-rhythm-unit) - var(--body-font-size)) / 2);
-    border-left: 2px solid $color-divider;
-}
-
 blockquote footer {
     text-align: right;
 }
