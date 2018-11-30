@@ -111,6 +111,17 @@ main::after {
     line-height: var(--endmark-line-height);
 }
 
+section + :not(section):before {
+    content: "§";
+    display: block;
+    font-family: $font-family-mincho-punc;
+    font-weight: $font-weight-mincho-normal;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    margin-bottom: var(--vertical-rhythm-unit);
+    text-align: center;
+}
+
 h1:lang(ja),
 h2:lang(ja) {
     font-feature-settings: $opentype-faetures-japanese-proportional;
@@ -177,13 +188,6 @@ dl {
 p + p {
     margin-top: 0;
     text-indent: var(--body-indent-size);
-}
-
-section + p:before {
-    content: "§";
-    display: block;
-    margin-bottom: var(--vertical-rhythm-unit);
-    text-align: center;
 }
 
 hr {
