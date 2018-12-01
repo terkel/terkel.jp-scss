@@ -8,7 +8,7 @@
 @import "variables";
 
 // Base
-@import "base/base";
+@import "base";
 
 // Components
 @import "components/ArticleList";
@@ -16,11 +16,11 @@
 @import "components/SiteHeader";
 @import "components/SiteLogo";
 
-// Media specific styles
-@import "media/print";
+// @media print
+@import "print";
 
-// Animation keyframes
+// @keyframes
 @import "keyframes";
 
-// Font resouces
-@import "font-face/YakuCalt";
+// @font-face
+@import "font-face";
