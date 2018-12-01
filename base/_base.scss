@@ -17,8 +17,9 @@
     --endmark-font-size: calc(var(--body-font-size) * 8 / 5);
     --endmark-line-height: var(--vertical-rhythm-unit);
 
-    --non-cjk-body-font-size: calc(var(--body-font-size) *  9 / 8);
-    --non-cjk-mono-font-size: calc(var(--non-cjk-body-font-size) *  8 / 9);
+    --latin-block-font-size: calc(var(--body-font-size) *  9 / 8);
+    --latin-inline-font-size: calc(var(--body-font-size) *  13 / 12);
+    --latin-mono-font-size: var(--body-font-size);
 
     --vertical-rhythm-unit: calc(var(--body-font-size) * 1.75);
     --extra-leading: 0.25rem;
@@ -270,19 +271,18 @@ blockquote {
     padding-left: var(--body-indent-size);
     margin: var(--vertical-rhythm-unit) 0;
     position: relative;
-
 }
 
 blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) {
     font-family: $font-family-serif;
-    font-size: var(--non-cjk-body-font-size);
+    font-size: var(--latin-block-font-size);
     color: $color-serif;
 }
 
 blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) code,
 blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) samp,
 blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) kbd {
-    font-size: var(--non-cjk-mono-font-size);
+    font-size: var(--latin-mono-font-size);
     color: inherit;
     margin-left: 0;
     margin-right: 0;
@@ -294,7 +294,7 @@ blockquote footer {
 
 figure,
 table {
-    font-family: $font-family-gothic;
+    font-family: $font-family-gothic-punc;
     font-weight: $font-weight-gothic-normal;
     font-size: var(--caption-font-size);
     line-height: var(--caption-line-height);
@@ -347,7 +347,6 @@ td:not(:first-child) {
 }
 
 th {
-    font-family: $font-family-gothic-punc;
     font-weight: $font-weight-gothic-bold;
     color: $color-gothic-bold;
     text-align: left;
@@ -415,7 +414,8 @@ caption {
 }
 
 a {
-    color: $color-link-fg;
+    --link-color: #{$color-link-fg};
+    color: var(--link-color);
 }
 
 a[href^="#fn-"],
@@ -428,35 +428,84 @@ a[href^="#fnref-"] {
     text-decoration: none;
 }
 
-mark,
-[id^="fn-"]:target,
-[id^="fnref-"]:target {
-    background-color: $color-highlight-bg;
-}
-
 a:not([href]) {
     cursor: default;
 }
 
-b,
-cite,
-code,
-dfn,
 em,
 i,
-kbd,
-samp,
-small,
+cite,
+dfn,
 strong,
-var {
-    line-height: normal;
+b,
+small,
+ruby,
+code,
+samp,
+kbd,
+var,
+sub,
+sup {
+    line-height: 0;
+}
+
+em:lang(ja) {
+    font-style: normal;
+    border-bottom: 3px double $color-text-underline;
+}
+
+@supports (text-decoration: underline double) {
+    em:lang(ja) {
+        border-bottom: 0;
+        text-decoration: underline double;
+        text-decoration-color: $color-text-underline;
+        text-underline-position: under;
+    }
+}
+
+cite:lang(ja) {
+    font-style: normal;
+}
+
+:lang(ja) > em:not(:lang(ja)),
+:lang(ja) > i:not(:lang(ja)),
+:lang(ja) > cite:not(:lang(ja)) {
+    font-family: $font-family-serif;
+    font-size: var(--latin-inline-font-size);
+    font-style: italic;
+    color: var(--link-color, #{$color-serif});
+}
+
+strong,
+b {
+    font-family: $font-family-gothic-punc;
+    font-weight: $font-weight-gothic-bold;
+    color: var(--link-color, #{$color-gothic-bold});
+}
+
+small {
+    font-size: var(--caption-font-size);
+}
+
+abbr[title] {
+    border-bottom: 1px dashed $color-text-underline;
+    text-decoration: none;
+}
+
+@supports (text-decoration: underline dashed) {
+    abbr[title] {
+        border-bottom: none;
+        text-decoration: underline dashed;
+        text-decoration-color: $color-text-underline;
+        text-underline-position: under;
+    }
 }
 
 code,
 samp,
 kbd {
     font-family: $font-family-mono;
-    color: $color-mono;
+    color: var(--link-color, #{$color-mono});
     margin-left: 0.1em;
     margin-right: 0.1em;
 }
@@ -475,31 +524,9 @@ kbd * {
     font-family: inherit !important;
 }
 
-cite:lang(ja):lang(ko):lang(zh) {
-    font-style: normal;
-}
-
-b,
-strong,
-dfn {
-    font-family: $font-family-gothic-punc;
-    font-weight: $font-weight-gothic-bold;
-    color: $color-gothic-bold;
-}
-
-a code,
-a samp,
-a kbd,
-a b,
-a strong,
-a dfn {
-    color: inherit;
-}
-
 sub,
 sup {
   font-size: 75%;
-  line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
@@ -510,6 +537,10 @@ sup {
 
 sub {
   bottom: -0.25em;
+}
+
+mark {
+    background-color: $color-highlight-bg;
 }
 
 audio,
