@@ -75,6 +75,10 @@
     font-kerning: auto;
 }
 
+:target {
+    animation: highlight-fade 2s ease;
+}
+
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -418,14 +422,11 @@ a {
     color: var(--link-color);
 }
 
-a[href^="#fn-"],
-a[href^="#fnref-"] {
-    font-family: $font-family-mono;
-    font-weight: bold;
-    line-height: 0;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    text-decoration: none;
+a[href^="#fig-"],
+a[href^="#figure-"],
+a[href^="#table-"] {
+    font-family: $font-family-gothic-punc;
+    font-weight: $font-weight-gothic-normal;
 }
 
 a:not([href]) {
