@@ -32,10 +32,10 @@ $color-divider: hsla(0, 0%, 0%, 0.12);
 // Font families
 $font-family-gothic: "source-han-sans-japanese", "Helvetica Neue", "Arial", sans-serif;
 $font-family-gothic-punc: "YakuCalt Gothic", $font-family-gothic;
-$font-family-mincho: "source-han-serif-japanese", "Hiragino Mincho ProN", serif;
+$font-family-mincho: "source-han-serif-japanese", "Hiragino Mincho ProN", "Yu Mincho", serif;
 $font-family-mincho-punc: "YakuCalt Mincho", $font-family-mincho;
 $font-family-title: "ten-mincho-text", "Hiragino Mincho ProN", serif;
-$font-family-serif: "source-serif-pro", "Georgia", serif;
+$font-family-serif: "source-serif-pro", "Georgia", "source-han-serif-japanese", serif;
 $font-family-mono: "source-code-pro", "Courier", "source-han-sans-japanese", monospace;
 $font-monowidth: 0.6;
 
