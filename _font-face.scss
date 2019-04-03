@@ -1,3 +1,17 @@
+// text-emphasis fix 1
+@font-face {
+    font-family: "em-dot-fix";
+    src: local("Times"), local("Times New Roman");
+    unicode-range: U+2022;
+}
+
+// text-emphasis fix 2 (for Chrome)
+@font-face {
+    font-family: "em-space-fix";
+    src: local("Hiragino Mincho ProN");
+    unicode-range: U+20;
+}
+
 /*!
  * YakuCalt (約猫)
  * http://tama-san.com/yakucalt-font/

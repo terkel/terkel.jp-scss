@@ -461,6 +461,8 @@ strong,
 b,
 small,
 ruby,
+rt,
+rp,
 code,
 samp,
 kbd,
@@ -475,12 +477,12 @@ em:lang(ja) {
     border-bottom: 3px double $color-text-underline;
 }
 
-@supports (text-decoration: underline double) {
+@supports (text-emphasis: "\2022") {
     em:lang(ja) {
         border-bottom: 0;
-        text-decoration: underline double;
-        text-decoration-color: $color-text-underline;
-        text-underline-position: under;
+        font-family: "em-dot-fix", "em-space-fix", $font-family-mincho-punc;
+        line-height: 0;
+        text-emphasis: "\2022";
     }
 }
 
@@ -502,6 +504,10 @@ b {
     font-family: $font-family-gothic-punc;
     font-weight: $font-weight-gothic-bold;
     color: var(--link-color, #{$color-gothic-bold});
+}
+
+ruby {
+    font-family: "em-dot-fix", "em-space-fix", $font-family-mincho-punc;
 }
 
 small {
