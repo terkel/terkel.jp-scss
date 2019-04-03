@@ -456,6 +456,7 @@ a:not([href]) {
 em,
 i,
 cite,
+q,
 dfn,
 strong,
 b,
@@ -468,7 +469,8 @@ samp,
 kbd,
 var,
 sub,
-sup {
+sup,
+span {
     line-height: 0;
 }
 
@@ -492,11 +494,20 @@ cite:lang(ja) {
 
 :lang(ja) > em:not(:lang(ja)),
 :lang(ja) > i:not(:lang(ja)),
-:lang(ja) > cite:not(:lang(ja)) {
+:lang(ja) > cite:not(:lang(ja)),
+:lang(ja) > q:not(:lang(ja)),
+:lang(ja) > span:not(:lang(ja)) {
     font-family: $font-family-serif;
     font-size: var(--latin-inline-font-size);
-    font-style: italic;
     color: var(--link-color, #{$color-serif});
+    margin-left: 0.0625em * 475 / 514;
+    margin-right: 0.0625em * 475 / 514;
+}
+
+:lang(ja) > em:not(:lang(ja)),
+:lang(ja) > i:not(:lang(ja)),
+:lang(ja) > cite:not(:lang(ja)) {
+    font-style: italic;
 }
 
 strong,
@@ -523,7 +534,7 @@ abbr[title] {
     abbr[title] {
         border-bottom: none;
         text-decoration: underline dashed;
-        text-decoration-color: $color-text-underline;
+        text-decoration-color: var(--link-color, #{$color-text-underline});
         text-underline-position: under;
     }
 }
