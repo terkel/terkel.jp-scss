@@ -2,7 +2,6 @@
     font-size: var(--caption-font-size);
     line-height: var(--caption-line-height);
     margin-top: calc(var(--vertical-rhythm-unit) * 4);
-    // margin-bottom: calc(var(--caption-line-height) * 2);
     margin-bottom: calc(var(--vertical-rhythm-unit) * 2);
 }
 
@@ -13,15 +12,32 @@
 }
 
 .SiteFooter__colophon,
-.SiteFooter__author {
+.SiteFooter__author,
+.SiteFooter__privacy {
     margin-top: var(--caption-line-height);
     margin-bottom: 0;
     text-indent: 0;
 }
 
-.SiteFooter__colophon::before,
-.SiteFooter__author::before {
+.SiteFooter hr {
+    margin-top: var(--caption-line-height);
+}
+
+.SiteFooter hr::before {
     content: "\2015";
     display: block;
-    margin-bottom: var(--caption-line-height);
+    margin-bottom: calc(var(--caption-line-height) * -1);
+}
+
+.SiteFooter__colophon {
+    padding-left: 0;
+}
+
+.SiteFooter__colophon li {
+    padding-left: 2em;
+    text-indent: -2em;
+}
+
+.SiteFooter__colophon li::before {
+    content: normal;
 }
