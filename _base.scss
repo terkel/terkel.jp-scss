@@ -295,21 +295,23 @@ blockquote {
     padding-left: var(--body-indent-size);
     margin: var(--vertical-rhythm-unit) 0;
     position: relative;
+
+    @include lang-any($lang-latin) {
+        font-family: $font-family-serif;
+        font-size: var(--latin-block-font-size);
+        color: $color-serif;
+    }
 }
 
-blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) {
-    font-family: $font-family-serif;
-    font-size: var(--latin-block-font-size);
-    color: $color-serif;
-}
-
-blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) code,
-blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) samp,
-blockquote:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) kbd {
-    font-size: var(--latin-mono-font-size);
-    color: inherit;
-    margin-left: 0;
-    margin-right: 0;
+blockquote code,
+blockquote samp,
+blockquote kbd {
+    @include lang-any($lang-latin) {
+        font-size: var(--latin-mono-font-size);
+        color: inherit;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 blockquote footer {
@@ -474,40 +476,46 @@ span {
     line-height: 0;
 }
 
-em:lang(ja) {
-    font-style: normal;
-    border-bottom: 3px double $color-text-underline;
-}
-
-@supports (text-emphasis: "\2022") {
-    em:lang(ja) {
-        border-bottom: 0;
-        font-family: "em-dot-fix", "em-space-fix", $font-family-mincho-punc;
-        line-height: 0;
-        text-emphasis: "\2022";
+em {
+    @include lang-any($lang-cjk) {
+        font-style: normal;
+        border-bottom: 3px double $color-text-underline;
     }
 }
 
-cite:lang(ja) {
-    font-style: normal;
+@supports (text-emphasis: "\2022") {
+    em {
+        @include lang-any($lang-cjk) {
+            border-bottom: 0;
+            font-family: "em-dot-fix", "em-space-fix", $font-family-mincho-punc;
+            line-height: 0;
+            text-emphasis: "\2022";
+        }
+    }
 }
 
-:lang(ja) > em:not(:lang(ja)),
-:lang(ja) > i:not(:lang(ja)),
-:lang(ja) > cite:not(:lang(ja)),
-:lang(ja) > q:not(:lang(ja)),
-:lang(ja) > span:not(:lang(ja)) {
-    font-family: $font-family-serif;
-    font-size: var(--latin-inline-font-size);
-    color: var(--link-color, #{$color-serif});
-    margin-left: 0.0625em * 475 / 514;
-    margin-right: 0.0625em * 475 / 514;
+cite {
+    @include lang-any($lang-cjk) {
+        font-style: normal;
+    }
 }
 
-:lang(ja) > em:not(:lang(ja)),
-:lang(ja) > i:not(:lang(ja)),
-:lang(ja) > cite:not(:lang(ja)) {
-    font-style: italic;
+* {
+    @include lang-any($lang-cjk) {
+        > em,
+        > i,
+        > cite,
+        > q,
+        > span {
+            @include lang-any($lang-latin) {
+                font-family: $font-family-serif;
+                font-size: var(--latin-inline-font-size);
+                color: var(--link-color, #{$color-serif});
+                margin-left: 0.0625em * 475 / 514;
+                margin-right: 0.0625em * 475 / 514;
+            }
+        }
+    }
 }
 
 strong,

@@ -1,0 +1,51 @@
+// lang-any
+// Creates selector matches any of language tags
+//
+// @param {list} $langs - List of labguage tag
+//
+// @example
+//   p {
+//     @include lang-any(ja, ko, zh) {
+//       font-family: sans-serif;
+//     }
+//   }
+//
+// @output
+//   p:lang(ja), p:lang(ko), p:lang(zh) {
+//     font-family: serif;
+//   }
+@mixin lang-any ($langs) {
+    $selector: "";
+    @each $lang in $langs {
+        $selector: $selector + "&:lang(" + $lang + "),";
+    }
+    #{$selector} {
+        @content;
+    }
+}
+
+// lang-not-any
+// Creates selector does not matche any of language tags
+//
+// @param {list} $langs - List of labguage tag not to match
+//
+// @example
+//   p {
+//     @include lang-not-any(ja, ko, zh) {
+//       font-family: serif;
+//     }
+//   }
+//
+// @output
+//   p:not(:lang(ja)):not(:lang(ko)):not(:lang(zh)) {
+//     font-family: serif;
+//   }
+@mixin lang-not-any ($langs) {
+    $selector: "&";
+    @each $lang in $langs {
+        $selector: $selector + ":not(:lang(" + $lang + "))";
+    }
+    #{$selector} {
+        @content;
+    }
+}
