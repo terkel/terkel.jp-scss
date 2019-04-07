@@ -210,7 +210,7 @@ dl {
     margin-bottom: 0;
 }
 
-p + p {
+p:not(.Source) + p {
     margin-top: 0;
     text-indent: var(--body-indent-size);
 }
@@ -291,16 +291,20 @@ pre {
     -webkit-overflow-scrolling: touch;
 }
 
-blockquote {
-    padding-left: var(--body-indent-size);
-    margin: var(--vertical-rhythm-unit) 0;
-    position: relative;
-
+p,
+li,
+dt,
+dd {
     @include lang-any($lang-latin) {
         font-family: $font-family-serif;
         font-size: var(--latin-block-font-size);
         color: $color-serif;
     }
+}
+
+blockquote {
+    padding-left: var(--body-indent-size);
+    margin: 0;
 }
 
 blockquote code,
@@ -312,10 +316,6 @@ blockquote kbd {
         margin-left: 0;
         margin-right: 0;
     }
-}
-
-blockquote footer {
-    text-align: right;
 }
 
 figure,
