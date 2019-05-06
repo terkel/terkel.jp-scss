@@ -336,18 +336,40 @@ figure {
         auto;
     grid-template-areas:
         "."
-        "figure"
+        "content"
         "."
         "caption";
 }
 
+figure::before {
+    content: "";
+    grid-area: content;
+    background-color: $color-gray-100;
+    box-shadow: 0 0 0 1px $color-gray-100;
+    padding-top: 62.5%; // 5/8
+}
+
 figure > :not(figcaption) {
-    grid-area: figure;
+    grid-area: content;
     justify-self: center;
 }
 
-figure img {
-    box-shadow: 0 0 0 1px $color-divider;
+figure > img {
+    align-self: center;
+}
+
+figure > iframe {
+    align-self: stretch;
+    width: 100%;
+}
+
+figure[data-content-aspect-ratio="16:9"] > iframe {
+    padding-top: 3.125%; // (5/8-9/16)/2
+    padding-bottom: 3.125%;
+}
+
+figure[data-content-media-type="video"] > iframe {
+    background-color: $color-black;
 }
 
 figcaption {
