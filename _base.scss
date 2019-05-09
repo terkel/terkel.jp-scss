@@ -341,12 +341,14 @@ figure {
         "caption";
 }
 
-figure::before {
-    content: "";
-    grid-area: content;
-    background-color: $color-gray-100;
-    box-shadow: 0 0 0 1px $color-gray-100;
-    padding-top: 62.5%; // 5/8
+@supports (grid-area: a) {
+    figure::before {
+        content: "";
+        grid-area: content;
+        background-color: $color-gray-100;
+        box-shadow: 0 0 0 1px $color-gray-100;
+        padding-top: 62.5%; // 5/8
+    }
 }
 
 figure > :not(figcaption) {
